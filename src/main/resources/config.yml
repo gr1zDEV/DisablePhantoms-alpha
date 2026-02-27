@@ -1,0 +1,12 @@
+# DisablePhantoms Configuration
+#
+# mode: BLACKLIST = phantoms are disabled in the listed worlds
+#        WHITELIST = phantoms are ONLY allowed in the listed worlds
+mode: BLACKLIST
+
+# List of worlds affected by the mode above
+worlds:
+  - world
+
+# Log blocked phantom spawns to console (useful for debugging)
+log-blocked-spawns: false

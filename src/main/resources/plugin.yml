@@ -1,0 +1,16 @@
+name: DisablePhantoms
+version: '${project.version}'
+main: com.ezinnovations.disablephantoms.DisablePhantoms
+api-version: '1.21'
+folia-supported: true
+description: Prevent phantom spawning per-world. Works on Paper and Folia.
+author: EzInnovations
+commands:
+  disablephantoms:
+    description: Manage phantom disabling per world
+    usage: /disablephantoms <reload|status|add|remove|list>
+    permission: disablephantoms.admin
+permissions:
+  disablephantoms.admin:
+    description: Access to all DisablePhantoms commands
+    default: op

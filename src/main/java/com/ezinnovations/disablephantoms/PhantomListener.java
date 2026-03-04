@@ -1,11 +1,10 @@
 package com.ezinnovations.disablephantoms;
 
-import com.destroystokyo.paper.event.entity.PreCreatureSpawnEvent;
 import org.bukkit.World;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.CreatureSpawnEvent;
 
 import java.util.Locale;
 
@@ -25,13 +24,13 @@ public final class PhantomListener implements Listener {
         this.plugin = plugin;
     }
 
-    @EventHandler(priority = EventPriority.HIGHEST)
-    public void onPreCreatureSpawn(PreCreatureSpawnEvent event) {
-        if (event.getType() != EntityType.PHANTOM) {
+    @EventHandler(ignoreCancelled = true)
+    public void onCreatureSpawn(CreatureSpawnEvent event) {
+        if (event.getEntityType() != EntityType.PHANTOM) {
             return;
         }
 
-        World world = event.getSpawnLocation().getWorld();
+        World world = event.getLocation().getWorld();
         if (world == null) {
             return;
         }
@@ -46,7 +45,6 @@ public final class PhantomListener implements Listener {
 
         if (shouldCancel) {
             event.setCancelled(true);
-            event.setShouldAbortSpawn(true);
             if (plugin.isLogBlockedSpawns()) {
                 plugin.getLogger().info("[DisablePhantoms] Blocked phantom spawn in " + world.getName());
             }

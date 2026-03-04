@@ -1,6 +1,6 @@
 # DisablePhantoms
 
-DisablePhantoms is a lightweight Paper/Folia plugin that lets you control **where phantoms are allowed to spawn** on your server.
+DisablePhantoms is a lightweight Bukkit-compatible plugin that lets you control **where phantoms are allowed to spawn** on your server.
 
 Perfect for network setups and survival servers that want phantoms in specific worlds only.
 
@@ -15,15 +15,15 @@ Perfect for network setups and survival servers that want phantoms in specific w
 - In-game admin command for quick management
 - Tab completion for subcommands and world names
 - Optional console logging for blocked phantom spawns
-- Built for **Paper 1.21+** and **Folia**
+- Built for **Minecraft 1.20+** across Bukkit, Spigot, Paper, Purpur, and Folia
 
 ---
 
 ## 📦 Compatibility
 
-- **Server software:** Paper, Folia
-- **Minecraft version:** 1.21+
-- **Java version:** 21
+- **Server software:** Bukkit, Spigot, Paper, Purpur, Folia
+- **Minecraft version:** 1.20+
+- **Java version:** 17+
 
 ---
 
@@ -91,7 +91,7 @@ Base command: `/disablephantoms`
 
 - Plugin name: `DisablePhantoms`
 - Main class: `com.ezinnovations.disablephantoms.DisablePhantoms`
-- API version: `1.21`
+- API version: `1.20`
 - Folia supported: `true`
 
 ---

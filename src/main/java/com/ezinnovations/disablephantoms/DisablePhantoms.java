@@ -1,8 +1,6 @@
 package com.ezinnovations.disablephantoms;
 
 import com.ezinnovations.disablephantoms.commands.DisablePhantomsCommand;
-import com.ezinnovations.disablephantoms.commands.HomesMenuCommand;
-import com.ezinnovations.disablephantoms.gui.HomesMenuListener;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -37,16 +35,11 @@ public final class DisablePhantoms extends JavaPlugin {
         initializeMetrics();
 
         getServer().getPluginManager().registerEvents(new PhantomListener(this), this);
-        getServer().getPluginManager().registerEvents(new HomesMenuListener(), this);
 
         DisablePhantomsCommand commandHandler = new DisablePhantomsCommand(this);
-        HomesMenuCommand homesMenuCommand = new HomesMenuCommand();
         if (getCommand("disablephantoms") != null) {
             getCommand("disablephantoms").setExecutor(commandHandler);
             getCommand("disablephantoms").setTabCompleter(commandHandler);
-        }
-        if (getCommand("homes") != null) {
-            getCommand("homes").setExecutor(homesMenuCommand);
         }
 
         Logger logger = getLogger();

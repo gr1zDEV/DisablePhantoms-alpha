@@ -6,9 +6,6 @@ folia-supported: true
 description: Prevent phantom spawning per-world. Works on Bukkit/Spigot/Paper/Purpur/Folia.
 author: EzInnovations
 commands:
-  homes:
-    description: Opens the homes GUI preview
-    usage: /homes
   disablephantoms:
     description: Manage phantom disabling per world
     usage: /disablephantoms <reload|status|add|remove|list>

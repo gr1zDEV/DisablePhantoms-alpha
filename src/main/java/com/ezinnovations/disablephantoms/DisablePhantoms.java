@@ -3,6 +3,7 @@ package com.ezinnovations.disablephantoms;
 import com.ezinnovations.disablephantoms.commands.DisablePhantomsCommand;
 import com.ezinnovations.disablephantoms.commands.HomesMenuCommand;
 import com.ezinnovations.disablephantoms.gui.HomesMenuListener;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public final class DisablePhantoms extends JavaPlugin {
     public void onEnable() {
         saveDefaultConfig();
         reloadPluginConfig();
+        initializeMetrics();
 
         getServer().getPluginManager().registerEvents(new PhantomListener(this), this);
         getServer().getPluginManager().registerEvents(new HomesMenuListener(), this);
@@ -49,6 +51,13 @@ public final class DisablePhantoms extends JavaPlugin {
 
         Logger logger = getLogger();
         logger.info("[DisablePhantoms] Enabled — Mode: " + mode + ", Worlds: " + new ArrayList<>(worldSet));
+    }
+
+    /**
+     * Initializes bStats metrics reporting for this plugin.
+     */
+    private void initializeMetrics() {
+        new Metrics(this, 30381);
     }
 
     /**
